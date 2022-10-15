@@ -10,9 +10,10 @@ const { readdirSync } = require("fs");
 
 const client = new Client({
   intents: [new IntentsBitField(131071)],
+	// evveryoneメンションなどの暴走防止
   allowedMentions: {
     parse: [],
-    replyUser: false,
+    repliedUser: false,
   },
 });
 
@@ -31,6 +32,7 @@ client.once("ready", () => {
 // メッセージに応じて返信するだけ
 client.on("messageCreate", (message) => {
   if (message.author.bot) return;
+  if (!message.content) return;
   console.log(message);
   if (message.content === "よろしく") {
     message.reply("よろしくやで");
@@ -38,6 +40,13 @@ client.on("messageCreate", (message) => {
     message.reply("お前タイムアウト確定な");
   } else if (message.content === "死ねカス") {
     message.reply("お前が死ねや");
+  } else if (message.content.match(/(🤔|:thinking:)/)) {
+    message.reply({
+      content: "考えるな、感じろ",
+      allowedMentions: {
+        repliedUser: true
+      },
+    });
   }
 });
 
