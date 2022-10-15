@@ -3,7 +3,7 @@ const { inspect } = require("util");
 
 module.exports = {
   name: "eval",
-  aliases: "exec",
+  aliases: ["exec"],
   async exec(message, args) {
     if (!process.env.ADMIN.split(",").includes(message.author.id))
       return message.reply("お前にはコマンドを実行する権限はねーよ!!");
@@ -14,7 +14,7 @@ module.exports = {
       return message.reply({
         embeds: [
           new EmbedBuilder()
-            .setName("成功")
+            .setTitle("成功")
             .setDescription(`\`\`\`js\n${inspect(result)}\n\`\`\``)
             .setColor(Colors.Blue)
             .toJSON(),
@@ -24,7 +24,7 @@ module.exports = {
       return message.reply({
         embeds: [
           new EmbedBuilder()
-            .setName("エラー")
+            .setTitle("エラー")
             .setDescription(`\`\`\`js\n${inspect(error)}\n\`\`\``)
             .setColor(Colors.Red)
             .toJSON(),
