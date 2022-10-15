@@ -1,0 +1,16 @@
+{
+  "name": "raimu-bot",
+  "version": "0.1.0",
+  "description": "らいむ's bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "format": "prettier --write \"(**/**.js|index.js)\""
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "prettier": "^2.7.1"
+  }
+}
