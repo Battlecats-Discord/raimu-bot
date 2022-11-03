@@ -36,15 +36,19 @@ client.on("messageCreate", (message) => {
   console.log(message);
   if (message.content === "よろしく") {
     message.reply("よろしくやで");
+    
   } else if (message.content === "らいむしね") {
     message.reply("お前タイムアウト確定な");
+    
   } else if (message.content === "死ねカス") {
     message.reply("お前が死ねや");
+    
   } else if (message.content.match(/(🤔|:thinking:)/)) {
     message.reply({
       content: "考えるな、感じろ",
       allowedMentions: {
-        repliedUser: true
+        repliedUser: false
+          
       },
     });
   }
