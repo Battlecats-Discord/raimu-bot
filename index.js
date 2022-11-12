@@ -36,7 +36,7 @@ client.on("messageCreate", (message) => {
   if (message.content === "よろしく") {
     message.reply("よろしくやで");
     
-  } else if (message.content.match(/らいむ(しね|シネ|死ね)/)) {
+  } else if ((/らいむ(しね|シネ|死ね)/).test(message.content)) {
     message.reply("お前タイムアウト確定な");
     
     } else if (message.content === "おやすみ") {
@@ -48,10 +48,10 @@ client.on("messageCreate", (message) => {
     } else if (message.content === "しりとりしよ") {
     message.reply("いいよ！じゃあ俺からね、リボン！！！");
     
-  } else if (message.content.match(/(死ね|しね|シネ)|(カス|かす)/)) {
+  } else if ((/(死ね|しね|シネ)(カス|かす)/).test(message.content)) {
     message.reply("お前が死ねや");
     
-  } else if (message.content.match(/(🤔|:thinking:)/)) {
+  } else if ((/(🤔|:thinking:)/).test(message.content)) {
     message.reply({
       content: "考えるな、感じろ",
       allowedMentions: {
