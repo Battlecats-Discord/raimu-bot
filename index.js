@@ -33,14 +33,22 @@ client.once("ready", () => {
 client.on("messageCreate", (message) => {
   if (message.author.bot) return;
   if (!message.content) return;
-  console.log(message);
   if (message.content === "よろしく") {
     message.reply("よろしくやで");
     
-  } else if (message.content === "らいむしね") {
+  } else if (message.content.match(/らいむ(しね|シネ|死ね)/)) {
     message.reply("お前タイムアウト確定な");
     
-  } else if (message.content === "死ねカス") {
+    } else if (message.content === "おやすみ") {
+    message.reply("報告すんなカス");
+
+    } else if (message.content === "おもんない") {
+    message.reply("それ今言う必要ある？お前の方がおもんない");
+
+    } else if (message.content === "しりとりしよ") {
+    message.reply("いいよ！じゃあ俺からね、リボン！！！");
+    
+  } else if (message.content.match(/(死ね|しね|シネ)|(カス|かす)/)) {
     message.reply("お前が死ねや");
     
   } else if (message.content.match(/(🤔|:thinking:)/)) {
