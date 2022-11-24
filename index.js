@@ -47,6 +47,16 @@ client.on("messageCreate", (message) => {
 
     } else if (message.content === "しりとりしよ") {
     message.reply("いいよ！じゃあ俺からね、リボン！！！");
+
+    } else if (message.content === "おはよう") {
+    message.reply("飯作って待ってんぞ、早く顔洗ってこい");
+
+    } else if (message.content === "おそよう") {
+    message.reply("馬鹿野郎！今何時だと思ってる！！！");
+
+    } else if (message.content === "Ryo") {
+    message.reply("Ryoうるさい
+                ！");
     
   } else if ((/(死ね|しね|シネ)(カス|かす)/).test(message.content)) {
     message.reply("お前が死ねや");
